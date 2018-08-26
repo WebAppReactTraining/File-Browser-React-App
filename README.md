@@ -61,7 +61,7 @@ Think about user flows to accomplish the above operations.
 - HTML, CSS, Vanilla Javascript
 - Angular/React (Optional)
  
-## Wireframe reference
+## Wireframe reference (src: Hacker Earth Challenges)
  
 ![alt text](https://github.com/IshantL/File-Browser-React-App/blob/master/src/resources/wireframe.png)
  
