@@ -26,40 +26,42 @@ The user should be able to perform following operations in this.
 - Implement a Recent activity view. Instantly updates the recently updated/added items in this view. With most recently updated at the top.
 
 
-[Advanced]
-• Update/Delete/add/get operations in O(1).
-• Infinite scroll.
-• Keyboard handling.
-• Use local storage for persistent data.
+## Advanced
+- Update/Delete/add/get operations in O(1).
+- Infinite scroll.
+- Keyboard handling.
+- Use local storage for persistent data.
 Think about user flows to accomplish the above operations.
 
-[Expectation]
--- You have to implement the file browser project structure provided in the JSONs.
--- Your Web app should allow users to create, update name and delete folders and files.
--- You should implement drag & drop of files between folders.
--- You should save both the long and short JSON in local storage, and load them on demand.
--- All CRUD operations mentioned above should happen and update the short JSON in local storage.
--- All infinite scroll etc should be implemented on the long JSON.
--- You don’t have to implement a File/Text editor in your app. File name with an icon would be enough.
--- Structure should be:
-• Game Title(Folder)
-o Game Play Resources(Folder)
- Installation(Folder)
- install.iso(File)
- archive_unbox.dat(File)
- Resource Dependency(Folder)
- profile.sav(File)
- snd0.AT3(File)
+## Expectation
+- You have to implement the file browser project structure provided in the JSONs.
+- Your Web app should allow users to create, update name and delete folders and files.
+- You should implement drag & drop of files between folders.
+- You should save both the long and short JSON in local storage, and load them on demand.
+- All CRUD operations mentioned above should happen and update the short JSON in local storage.
+- All infinite scroll etc should be implemented on the long JSON.
+- You don’t have to implement a File/Text editor in your app. File name with an icon would be enough.
+
+
+- Structure should be:
+- Game Title(Folder)
+- Game Play Resources(Folder)
+-Installation(Folder)
+- install.iso(File)
+- archive_unbox.dat(File)
+- Resource Dependency(Folder)
+- profile.sav(File)
+- snd0.AT3(File)
  
-[Guide]
---  Long JSON: http://hck.re/jimM8z
--- Short JSON: http://hck.re/yNa9a3
+## Guide
+-  Long JSON: http://hck.re/jimM8z
+- Short JSON: http://hck.re/yNa9a3
  
-Tech Stack:
--- HTML, CSS, Vanilla Javascript
--- Angular/React (Optional)
+## Tech Stack:
+- HTML, CSS, Vanilla Javascript
+- Angular/React (Optional)
  
-[Wireframe reference]
+## Wireframe reference
  
  
  
