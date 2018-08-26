@@ -63,8 +63,8 @@ Think about user flows to accomplish the above operations.
  
 ## Wireframe reference
  
+![alt text](https://github.com/IshantL/File-Browser-React-App/blob/master/src/resources/wireframe.png)
  
- 
-**This mock-up is for your minimum reference. We expect a way much more feature rich and expressive implementation.**
+
 
 
