@@ -1,23 +1,48 @@
 import React,{Component} from 'react';
 
 class IndentationList extends Component{
-
+	
 	generateHTML (){
-		let data=this.props.data, listHTML='';
-		if(data != null && data.length > 0){
-			data.map(repeater => {
-				let temp, objectKeys = Object.keys(repeater);
-				console.log(objectKeys);
-				if(objectKeys != null & objectKeys.length > 0){
-					let key0 = objectKeys[0], key1 = objectKeys[1];
-					
-					let repeaterChild = repeater[key1];
-					let chld = Object.keys(repeaterChild), key01 = chld[0], key02 = chld[1];
-					listHTML = <ul> <li>{repeater.title } <ul>{key1}  <li> {key01 } </li><li>{key02}  </li></ul></li></ul>;
-				}
-			});
-		}
-		return listHTML;
+	let data=this.props.data;
+	
+	return data.map(repeater =>{
+		let key0 = Object.keys(repeater)[0], 
+			key1 = Object.keys(repeater)[1],
+			repeaterChild = repeater[key1],
+			child = Object.keys(repeaterChild), 
+			key01 = child[0], key02 = child[1],
+			child01 = repeaterChild[key01],
+			child02 = repeaterChild[key02],listData;
+			/*console.log(repeaterChild[key01]);
+			console.log(repeaterChild[key02]);*/
+
+		return listData = 
+		<ul>
+			<li>{repeater.title } 
+				<ul>
+				<li>{key1}
+					<ul>
+					<li> {key01 } 
+						<ul>
+							<li>{child01[0].file_name}</li>
+							<li>{child01[1].file_name}</li>
+						</ul>
+					</li>
+					<li> {key02} 
+						<ul>
+							<li>{child02[0].file_name}</li>
+							<li>{child02[1].file_name}</li>
+						</ul>
+					</li>
+					</ul>
+				</li>
+				</ul>
+
+
+			</li>
+		</ul>
+	
+	})
 	}
 
 	render(){
