@@ -1,0 +1,7 @@
+li.a {
+    list-style-image: url('../images/expand-arrow.png');
+}
+
+li.b {
+    list-style-image: url('../images/collapse-arrow.png');
+}

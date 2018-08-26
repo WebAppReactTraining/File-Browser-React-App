@@ -1,7 +1,28 @@
 import React,{Component} from 'react';
+import '../css/style.css';
 
 class IndentationList extends Component{
-	
+	constructor(props) {
+        super(props);
+
+        this.state = {
+            active: false,
+            toggle:"b"
+        };
+        this.toggleClass=this.toggleClass.bind(this);
+    }
+
+    toggleClass() {
+    	const currentState = this.state.active;
+    	console.log(currentState);
+    	if(currentState){
+    		this.setState({ active:false,toggle: "a" });
+    	}else{
+    		this.setState({ active:true,toggle: "b" });
+
+    	} 
+    };
+
 	generateHTML (){
 	let data=this.props.data;
 	
@@ -18,7 +39,8 @@ class IndentationList extends Component{
 
 		return listData = 
 		<ul>
-			<li>{repeater.title } 
+			<li className={this.state.toggle} onClick={this.toggleClass}>
+				{repeater.title } 
 				<ul>
 				<li>{key1}
 					<ul>
