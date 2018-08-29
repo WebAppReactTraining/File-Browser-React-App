@@ -23,11 +23,7 @@ class Products extends React.Component {
   handleAddEvent(evt) {
     var id = (+ new Date() + Math.floor(Math.random() * 999999)).toString(36);
     var product = {
-      id: id,
-      name: "",
-      price: "",
-      category: "",
-      qty: 0
+      //add the aatributes
     }
     this.state.products.push(product);
     this.setState(this.state.products);
@@ -35,7 +31,6 @@ class Products extends React.Component {
   }
 
   render() {
-
     return (
       <div>
         <ProductTable onRowAdd={this.handleAddEvent.bind(this)} onRowDel={this.handleRowDel.bind(this)} products={this.state.products} />
@@ -80,6 +75,10 @@ class ProductTable extends React.Component {
 
 class ProductRow extends React.Component {
 
+  imageClick (repeater) {
+      console.log("comes here " + repeater.title);  
+    };
+
   onDelEvent() {
     this.props.onDelEvent(this.props.product);
 
@@ -88,7 +87,7 @@ class ProductRow extends React.Component {
 
     return (
       <tr >
-      <td>
+      <td onClick={()=>this.imageClick(this.props.product)}>
       <img src={collapseArrow} />
       <span>{this.props.product.title }</span>
       </td>
