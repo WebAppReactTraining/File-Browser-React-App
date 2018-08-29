@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import '../css/style.css';
+import collapseArrow from '../images/collapse-arrow.png';
 
 class IndentationList extends Component{
 	constructor(props) {
@@ -10,6 +11,7 @@ class IndentationList extends Component{
             toggle:"b"
         };
         this.toggleClass=this.toggleClass.bind(this);
+        this.dataInside=this.dataInside.bind(this);
     }
 
     toggleClass() {
@@ -23,47 +25,31 @@ class IndentationList extends Component{
     	} 
     };
 
+    imageClick (repeater) {
+    	debugger;
+    	console.log("comes here " + repeater.title);
+    	this.dataInside();
+  
+    };
+    dataInside(){
+    	var list1;
+    	return list1=<tr>
+				<td>
+					fjhfjhjfhS
+				</td>
+			</tr>
+    }
+
 	generateHTML (){
-	let data=this.props.data;
-	
-	return data.map(repeater =>{
-		let key0 = Object.keys(repeater)[0], 
-			key1 = Object.keys(repeater)[1],
-			repeaterChild = repeater[key1],
-			child = Object.keys(repeaterChild), 
-			key01 = child[0], key02 = child[1],
-			child01 = repeaterChild[key01],
-			child02 = repeaterChild[key02],listData;
-			/*console.log(repeaterChild[key01]);
-			console.log(repeaterChild[key02]);*/
-
-		return listData = 
-		<ul>
-			<li className={this.state.toggle} onClick={this.toggleClass}>
-				{repeater.title } 
-				<ul>
-				<li>{key1}
-					<ul>
-					<li> {key01 } 
-						<ul>
-							<li>{child01[0].file_name}</li>
-							<li>{child01[1].file_name}</li>
-						</ul>
-					</li>
-					<li> {key02} 
-						<ul>
-							<li>{child02[0].file_name}</li>
-							<li>{child02[1].file_name}</li>
-						</ul>
-					</li>
-					</ul>
-				</li>
-				</ul>
-
-
-			</li>
-		</ul>
-	
+	let data=this.props.data,list;	
+	return data.map(repeater =>{ 
+			return list=<tr>
+				<td  onClick={()=>this.imageClick(repeater)}>
+					<img src={collapseArrow} />
+					<span>{repeater.title }</span>
+					{this.dataInside}
+				</td>
+			</tr>	
 	})
 	}
 
@@ -71,7 +57,11 @@ class IndentationList extends Component{
 		
 		return(
 			<div>
-				{this.generateHTML()}
+				<table>
+					<tbody>
+						{this.generateHTML()}
+					</tbody>
+				</table>
 			</div>
 		);
 	}
