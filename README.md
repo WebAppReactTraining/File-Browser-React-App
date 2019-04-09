@@ -1,70 +1,75 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-File Browser
-## Problem Statement
+This web app should let user create and display the nested project structures and should provide file handling functionality
 
-You are expected to create pseudo frontend web app File Browser. Your web app should let user create and display the nested project structures and should provide file handling functionality mentioned below.
- 
-## Minimum Requirement
-The user should be able to perform following operations in this.
-- Show the file browser with proper indentation based on nesting.
-- The default state is every folder closed.
-- The view can have multiple folders.
-- Use data in the file provided for rendering the view
-- Add the file/folder inside any folder.
-- Just need a way to show the file, No Need to create an actual file, Just create a dummy file item, Show that file as an item in the folder.
-- Delete any file/folder. Implement Trash bin.
-- View to see the detail of the content.
-- Like createdAt, UpdatedAt, Owner. Etc.
-- Search view for searching any file/folder.
- 
-## Intermediate
-- Update any file/folder.
-- The user can only update the name of the file/folder.
-- Restore/Empty operations in the trash bin.
-- Move files and folders by dragging and dropping.
-- Implement a Recent activity view. Instantly updates the recently updated/added items in this view. With most recently updated at the top.
+Concepts such as filtering sorting and Basic CSS should be learned from this example.
 
+Demo: https://ishantl.github.io/File-Browser-React-App/
 
-## Advanced
-- Update/Delete/add/get operations in O(1).
-- Infinite scroll.
-- Keyboard handling.
-- Use local storage for persistent data.
-Think about user flows to accomplish the above operations.
+## How to use
 
-## Expectation
-- You have to implement the file browser project structure provided in the JSONs.
-- Your Web app should allow users to create, update name and delete folders and files.
-- You should implement drag & drop of files between folders.
-- You should save both the long and short JSON in local storage, and load them on demand.
-- All CRUD operations mentioned above should happen and update the short JSON in local storage.
-- All infinite scroll etc should be implemented on the long JSON.
-- You don’t have to implement a File/Text editor in your app. File name with an icon would be enough.
+- clone the project
+- npm install
+- npm start
 
+## Details about the commands
 
-- Structure should be:
-- Game Title(Folder)
-- Game Play Resources(Folder)
--Installation(Folder)
-- install.iso(File)
-- archive_unbox.dat(File)
-- Resource Dependency(Folder)
-- profile.sav(File)
-- snd0.AT3(File)
- 
-## Guide
--  Long JSON: http://hck.re/jimM8z
-- Short JSON: http://hck.re/yNa9a3
- 
-## Tech Stack:
-- HTML, CSS, Vanilla Javascript
-- Angular/React (Optional)
- 
-## Wireframe reference (src: Hacker Earth Challenges)
- 
-![alt text](https://github.com/IshantL/File-Browser-React-App/blob/master/src/resources/wireframe.png)
- 
+  - [npm start](#npm-start)
+  - [npm test](#npm-test)
+  - [npm run build](#npm-run-build)
 
 
 
+### `npm start`
+
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](#running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
+
+See the section about [deployment](#deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Deploying React Applications to Github Pages
+Now follow these steps to publish your react application on gh-pages:
+
+1. Build a react application or just fork and clone the above repository on Github.
+2. Install thegh-pages package from npm. On the terminal, run:
+npm install gh-pages or yarn add gh-pages
+
+This package would help us to create a gh-pagesbranch on Github and also serve our bundled react files on the branch.
+
+3. Locate the package.json file in your root directory, add this line of code to your script: "homepage": "link-to-your-repository", and save.
+
+4. In your package.json file, locate “scripts” add these lines of code:
+```
+{
+   ...
+   "predeploy": "yarn run build",
+   "deploy": "gh-pages -d build",
+   ...
+}
+```
+5. In the terminal, run this command npm run deploy OR yarn run deploy.This command pushes your built file to the gh-pagesbranch on your remote repository.
