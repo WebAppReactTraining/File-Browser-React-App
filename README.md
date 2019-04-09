@@ -3,7 +3,7 @@ This web app should let user create and display the nested project structures an
 
 Concepts such as filtering sorting and Basic CSS should be learned from this example.
 
-Demo: https://ishantl.github.io/File-Browser-React-App/
+Demo: https://ishantl.github.io/react-blog/index.html
 
 ## How to use
 
